@@ -46,7 +46,11 @@ func main() {
 	}
 	err = doUpsert(sqliteDb)
 	if err != nil {
-		log.Fatalf("sqlite upsert: %v", err)
+		log.Fatalf("sqlite upsert 1: %v", err)
+	}
+	err = doUpsert(sqliteDb)
+	if err != nil {
+		log.Fatalf("sqlite upsert 2: %v", err)
 	}
 
 	// SQL Server
@@ -58,6 +62,10 @@ func main() {
 	}
 	err = doUpsert(sqlServerDb)
 	if err != nil {
-		log.Fatalf("sql server upsert: %v", err)
+		log.Fatalf("sql server upsert 1: %v", err)
+	}
+	err = doUpsert(sqlServerDb)
+	if err != nil {
+		log.Fatalf("sql server upsert 2: %v", err)
 	}
 }
